@@ -1,0 +1,957 @@
+/* =========================
+   ilex – Core Theme Tokens
+   ========================= */
+
+:root {
+  /* Brand */
+  --ilex-bg: #020617;
+  --ilex-bg-elevated: #050b1a;
+  --ilex-primary: #2f86ff;
+  --ilex-primary-soft: #1d5fe0;
+  --ilex-accent: #d9ff4f;
+
+  /* Typography */
+  --ilex-text: #e5e7eb;
+  --ilex-text-muted: #9ca3af;
+
+  /* UI */
+  --ilex-border: #1f2937;
+  --ilex-shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --ilex-radius-md: 0.75rem;
+  --ilex-radius-lg: 1.25rem;
+  --ilex-transition-fast: 150ms ease-out;
+  --ilex-transition-med: 220ms ease-out;
+}
+
+/* =========================
+   Base
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background-color: var(--ilex-bg);
+  color: var(--ilex-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--ilex-primary);
+  text-decoration: none;
+  transition: color var(--ilex-transition-fast);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--ilex-accent);
+}
+
+/* Background overlay subtle grid/gradient */
+
+.ilex-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem 1.5rem 3rem;
+  overflow-x: hidden;
+}
+
+.ilex-page-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left,
+      rgba(47, 134, 255, 0.18),
+      transparent 55%),
+    radial-gradient(circle at bottom right,
+      rgba(217, 255, 79, 0.12),
+      transparent 55%);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+  z-index: -1;
+}
+
+/* =========================
+   Layout helpers
+   ========================= */
+
+.ilex-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Logo area
+   ========================= */
+
+.ilex-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ilex-logo-mark {
+  width: 32px;
+  height: 32px;
+}
+
+.ilex-logo-mark svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ilex-logo-mark-primary {
+  fill: var(--ilex-primary);
+}
+
+.ilex-logo-mark-accent {
+  fill: var(--ilex-accent);
+}
+
+.ilex-logo-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: var(--ilex-primary);
+}
+
+/* =========================
+   Navigation
+   ========================= */
+
+.ilex-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  margin-bottom: 2rem;
+  border-radius: var(--ilex-radius-lg);
+  background: rgba(5, 11, 26, 0.94);
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+  position: sticky;
+  top: 1.2rem;
+  z-index: 20;
+}
+
+.ilex-nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  align-items: center;
+}
+
+.ilex-nav-link {
+  color: var(--ilex-text-muted);
+  position: relative;
+  padding-bottom: 0.1rem;
+}
+
+.ilex-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ilex-accent), var(--ilex-primary));
+  transition: width var(--ilex-transition-fast);
+}
+
+.ilex-nav-link:hover {
+  color: var(--ilex-text);
+}
+
+.ilex-nav-link:hover::after {
+  width: 100%;
+}
+
+.ilex-nav-primary-link {
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 134, 255, 0.8);
+  background: rgba(2, 6, 23, 0.8);
+}
+
+.ilex-nav-primary-link:hover {
+  background: rgba(47, 134, 255, 0.14);
+}
+
+/* Mobile nav toggle */
+
+.ilex-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 0.18rem;
+  width: 34px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(31, 41, 55, 0.9);
+  background: rgba(5, 11, 26, 0.96);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.ilex-nav-toggle span {
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--ilex-text);
+  transition: transform var(--ilex-transition-fast), opacity var(--ilex-transition-fast);
+}
+
+.ilex-nav-toggle.is-open span:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.ilex-nav-toggle.is-open span:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
+/* =========================
+   Hero
+   ========================= */
+
+.ilex-hero {
+  margin-top: 1.5rem;
+}
+
+.ilex-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.ilex-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at top left,
+      rgba(217, 255, 79, 0.16),
+      transparent 70%)
+    rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ilex-text-muted);
+}
+
+.ilex-hero h1 {
+  font-size: clamp(2.3rem, 3vw, 3rem);
+  margin: 1.25rem 0 0.75rem;
+}
+
+.ilex-gradient-text {
+  background: linear-gradient(120deg, var(--ilex-primary), var(--ilex-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ilex-hero p {
+  margin: 0 0 1.5rem;
+  color: var(--ilex-text-muted);
+}
+
+.ilex-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.ilex-hero-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ilex-text-muted);
+}
+
+.ilex-hero-metadata .value {
+  display: block;
+  margin-top: 0.2rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ilex-text);
+}
+
+/* Hero panel */
+
+.ilex-hero-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ilex-hero-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ilex-status-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ilex-status-list li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.ilex-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+}
+
+.ilex-status-dot--ok {
+  background: #22c55e;
+}
+
+.ilex-status-dot--warn {
+  background: #facc15;
+  box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.18);
+}
+
+.ilex-status-tag {
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  color: var(--ilex-text-muted);
+}
+
+.ilex-hero-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ilex-text-muted);
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Hero secondary card */
+
+.ilex-hero-secondary {
+  background: radial-gradient(circle at right top,
+      rgba(47, 134, 255, 0.12),
+      transparent 65%)
+    var(--ilex-bg-elevated);
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+.ilex-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    background-color var(--ilex-transition-fast),
+    border-color var(--ilex-transition-fast),
+    box-shadow var(--ilex-transition-fast),
+    transform var(--ilex-transition-fast),
+    color var(--ilex-transition-fast);
+}
+
+.ilex-btn-primary {
+  background: var(--ilex-primary);
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(47, 134, 255, 0.45);
+}
+
+.ilex-btn-primary:hover {
+  background: var(--ilex-primary-soft);
+  box-shadow: 0 18px 45px rgba(47, 134, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.ilex-btn-outline {
+  background: transparent;
+  border-color: var(--ilex-border);
+  color: var(--ilex-text);
+}
+
+.ilex-btn-outline:hover {
+  border-color: var(--ilex-primary);
+}
+
+/* =========================
+   Sections
+   ========================= */
+
+.ilex-section {
+  padding: 4rem 0;
+}
+
+.ilex-section-alt {
+  background: radial-gradient(circle at top right,
+      rgba(47, 134, 255, 0.1),
+      transparent 60%)
+    rgba(2, 6, 23, 0.9);
+}
+
+.ilex-section-header {
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.ilex-section-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.ilex-section-header p {
+  margin: 0;
+  color: var(--ilex-text-muted);
+}
+
+/* =========================
+   Cards / grid
+   ========================= */
+
+.ilex-card {
+  background: var(--ilex-bg-elevated);
+  border-radius: var(--ilex-radius-lg);
+  border: 1px solid var(--ilex-border);
+  padding: 1.5rem;
+  box-shadow: var(--ilex-shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.ilex-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right,
+      rgba(47, 134, 255, 0.13),
+      transparent 60%);
+  opacity: 0;
+  transition: opacity var(--ilex-transition-med);
+  pointer-events: none;
+}
+
+.ilex-card:hover::after {
+  opacity: 1;
+}
+
+.ilex-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.ilex-card-subtitle {
+  font-size: 0.75rem;
+  color: var(--ilex-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.ilex-list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.05rem;
+  color: var(--ilex-text-muted);
+  font-size: 0.9rem;
+}
+
+.ilex-list li + li {
+  margin-top: 0.18rem;
+}
+
+/* Grid utilities */
+
+.ilex-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.ilex-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+/* Services */
+
+.ilex-service-card {
+  transition: transform var(--ilex-transition-med), box-shadow var(--ilex-transition-med),
+    border-color var(--ilex-transition-med);
+}
+
+.ilex-service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.9);
+  border-color: rgba(47, 134, 255, 0.85);
+}
+
+/* Stack */
+
+.ilex-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.ilex-chip-row {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.ilex-chip {
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: rgba(15, 23, 42, 0.9);
+  font-size: 0.8rem;
+  color: var(--ilex-text-muted);
+}
+
+/* Process */
+
+.ilex-process {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px dashed rgba(75, 85, 99, 0.9);
+}
+
+.ilex-process li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  padding-left: 0.9rem;
+  position: relative;
+  padding-bottom: 1.4rem;
+}
+
+.ilex-process li:last-child {
+  padding-bottom: 0;
+}
+
+.ilex-process li::before {
+  content: "";
+  position: absolute;
+  left: -0.48rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--ilex-accent);
+  box-shadow: 0 0 0 4px rgba(217, 255, 79, 0.18);
+}
+
+.step-index {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ilex-text-muted);
+  margin-top: 0.1rem;
+}
+
+.step-body h3 {
+  margin: 0 0 0.25rem;
+}
+
+.step-body p {
+  margin: 0;
+  color: var(--ilex-text-muted);
+}
+
+/* About & testimonials */
+
+.ilex-about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.ilex-about-card {
+  margin-top: 1rem;
+}
+
+.ilex-kpi-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.kpi-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.kpi-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ilex-text-muted);
+  margin-top: 0.25rem;
+}
+
+.ilex-testimonials p {
+  color: var(--ilex-text-muted);
+}
+
+.ilex-testimonial-meta {
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+}
+
+/* Contact */
+
+.ilex-contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.ilex-contact-meta {
+  display: grid;
+  gap: 0.9rem;
+  font-size: 0.9rem;
+  color: var(--ilex-text-muted);
+}
+
+.ilex-contact-meta .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.ilex-contact-meta .value {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ilex-text);
+}
+
+.ilex-contact-form {
+  position: relative;
+}
+
+.ilex-form-row {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.ilex-form-row label {
+  color: var(--ilex-text-muted);
+}
+
+.ilex-input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--ilex-radius-md);
+  border: 1px solid var(--ilex-border);
+  background: rgba(5, 11, 26, 0.96);
+  color: var(--ilex-text);
+  font-size: 0.95rem;
+  transition:
+    border-color var(--ilex-transition-fast),
+    box-shadow var(--ilex-transition-fast),
+    background-color var(--ilex-transition-fast),
+    transform var(--ilex-transition-fast);
+  resize: vertical;
+}
+
+.ilex-input::placeholder {
+  color: var(--ilex-text-muted);
+}
+
+.ilex-input:focus-visible {
+  outline: none;
+  border-color: var(--ilex-primary);
+  box-shadow: 0 0 0 1px rgba(47, 134, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.ilex-textarea {
+  min-height: 120px;
+}
+
+.ilex-form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.ilex-form-hint {
+  font-size: 0.8rem;
+  color: var(--ilex-text-muted);
+}
+
+/* Footer */
+
+.ilex-footer {
+  padding: 2.5rem 1.5rem 2rem;
+  border-top: 1px solid rgba(31, 41, 55, 0.9);
+  background: radial-gradient(circle at top center,
+      rgba(47, 134, 255, 0.18),
+      transparent 65%)
+    #020617;
+}
+
+.ilex-footer-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.ilex-footer-brand p {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--ilex-text-muted);
+}
+
+.ilex-footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.ilex-footer-links h4 {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ilex-text-muted);
+}
+
+.ilex-footer-links a {
+  display: block;
+  color: var(--ilex-text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.ilex-footer-links a:hover {
+  color: var(--ilex-text);
+}
+
+.ilex-footer-meta {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--ilex-text-muted);
+  border-top: 1px solid rgba(31, 41, 55, 0.8);
+  padding-top: 0.8rem;
+}
+
+/* =========================
+   Animations
+   ========================= */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 600ms ease-out,
+    transform 600ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate="fade-up"] {
+  transform: translateY(18px);
+}
+
+[data-animate="fade-in"] {
+  transform: translateY(0);
+}
+
+[data-animate="slide-left"] {
+  transform: translateX(18px);
+}
+
+[data-animate="slide-up"] {
+  transform: translateY(30px);
+}
+
+[data-animate].is-visible[data-animate="slide-left"],
+[data-animate].is-visible[data-animate="slide-up"] {
+  transform: translate(0, 0);
+}
+
+/* Delay control via data-attribute */
+
+[data-animate][data-animate-delay="80"] {
+  transition-delay: 80ms;
+}
+
+[data-animate][data-animate-delay="120"] {
+  transition-delay: 120ms;
+}
+
+[data-animate][data-animate-delay="160"] {
+  transition-delay: 160ms;
+}
+
+/* Card hover float */
+
+.ilex-case-card {
+  transition: transform 220ms ease-out, box-shadow 220ms ease-out;
+}
+
+.ilex-case-card:hover {
+  transform: translateY(-5px) translateZ(0);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.9);
+}
+
+/* Accent dot */
+
+.ilex-accent-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--ilex-accent);
+  box-shadow: 0 0 0 4px rgba(217, 255, 79, 0.25);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .ilex-nav {
+    padding-inline: 1rem;
+  }
+
+  .ilex-nav-links {
+    position: absolute;
+    right: 1.4rem;
+    top: 3.2rem;
+    background: rgba(5, 11, 26, 0.98);
+    border-radius: var(--ilex-radius-lg);
+    border: 1px solid rgba(31, 41, 55, 0.9);
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 190px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+    transform-origin: top right;
+    transform: scale(0.9) translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--ilex-transition-med),
+      transform var(--ilex-transition-med);
+  }
+
+  .ilex-nav-links.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+  }
+
+  .ilex-nav-toggle {
+    display: flex;
+  }
+
+  .ilex-hero-grid,
+  .ilex-grid-3,
+  .ilex-grid-2,
+  .ilex-stack-grid,
+  .ilex-about-grid,
+  .ilex-contact-grid,
+  .ilex-footer-inner,
+  .ilex-footer-links,
+  .ilex-kpi-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ilex-section {
+    padding-block: 3rem;
+  }
+
+  .ilex-page {
+    padding-inline: 1rem;
+  }
+
+  .ilex-nav {
+    top: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ilex-hero h1 {
+    font-size: 2rem;
+  }
+
+  .ilex-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ilex-card {
+    padding: 1.2rem;
+  }
+
+  .ilex-footer {
+    padding-inline: 1rem;
+  }
+}

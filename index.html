@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ilex · Software Engineering Studio</title>
+  <meta name="description" content="ilex is a software engineering studio focused on scalable web platforms, backend architectures, and developer tooling for startups and enterprises." />
+  <link rel="stylesheet" href="assets/css/ilex-theme.css" />
+</head>
+<body class="ilex-page">
+  <div class="ilex-page-overlay"></div>
+
+  <!-- =========================
+       Navigation
+       ========================= -->
+  <header class="ilex-container">
+    <div class="ilex-nav">
+      <a href="#top" class="ilex-logo-row">
+        <div class="ilex-logo-mark" aria-hidden="true">
+          <!-- Simple inline SVG version of the logo mark -->
+          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="9" r="5" class="ilex-logo-mark-accent" />
+            <path d="M6 26 L18 14 L24 14 L12 26 Z" class="ilex-logo-mark-primary" />
+            <path d="M18 26 L24 20 L30 20 L24 26 Z" class="ilex-logo-mark-primary" />
+          </svg>
+        </div>
+        <span class="ilex-logo-text">ilex</span>
+      </a>
+
+      <nav class="ilex-nav-links" aria-label="Main navigation">
+        <a href="#services" class="ilex-nav-link">Services</a>
+        <a href="#stack" class="ilex-nav-link">Stack</a>
+        <a href="#cases" class="ilex-nav-link">Case Studies</a>
+        <a href="#about" class="ilex-nav-link">About</a>
+        <a href="#contact" class="ilex-nav-link ilex-nav-primary-link">Contact</a>
+      </nav>
+
+      <button class="ilex-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================
+       Hero
+       ========================= -->
+  <main id="top">
+    <section class="ilex-hero ilex-container">
+      <div class="ilex-hero-grid">
+        <div class="ilex-hero-copy" data-animate="fade-up">
+          <div class="ilex-hero-pill">
+            <span class="ilex-accent-dot"></span>
+            <span>Backend-heavy software engineering studio</span>
+          </div>
+          <h1>We architect and ship <span class="ilex-gradient-text">scalable web systems</span>.</h1>
+          <p>
+            ilex partners with product teams to design, build, and maintain robust backends,
+            modern web frontends, and developer tools that keep up with growth.
+          </p>
+          <div class="ilex-hero-actions">
+            <a href="#contact" class="ilex-btn ilex-btn-primary">
+              Book a technical call
+            </a>
+            <a href="#cases" class="ilex-btn ilex-btn-outline">
+              View case studies
+            </a>
+          </div>
+          <div class="ilex-hero-metadata">
+            <div>
+              <span class="label">Focus</span>
+              <span class="value">Backend · DevOps · Platforms</span>
+            </div>
+            <div>
+              <span class="label">Clients</span>
+              <span class="value">Startups &amp; enterprise teams</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ilex-hero-panel" data-animate="fade-in">
+          <div class="ilex-hero-card ilex-card">
+            <div class="ilex-card-subtitle">ENV · PRODUCTION</div>
+            <h2 class="ilex-card-title">Deployment status</h2>
+            <ul class="ilex-status-list">
+              <li>
+                <span class="ilex-status-dot ilex-status-dot--ok"></span>
+                <span>API gateway</span>
+                <span class="ilex-status-tag">Operational</span>
+              </li>
+              <li>
+                <span class="ilex-status-dot ilex-status-dot--ok"></span>
+                <span>Background workers</span>
+                <span class="ilex-status-tag">Green</span>
+              </li>
+              <li>
+                <span class="ilex-status-dot ilex-status-dot--warn"></span>
+                <span>Analytics pipeline</span>
+                <span class="ilex-status-tag">Observing</span>
+              </li>
+            </ul>
+
+            <div class="ilex-hero-metric-grid">
+              <div>
+                <span class="metric-label">Avg. response time</span>
+                <span class="metric-value">82 ms</span>
+              </div>
+              <div>
+                <span class="metric-label">Uptime (90d)</span>
+                <span class="metric-value">99.97%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ilex-hero-secondary ilex-card" data-animate="slide-left">
+            <div class="ilex-card-subtitle">ENGAGEMENT</div>
+            <h3 class="ilex-card-title">Embedded engineering teams</h3>
+            <p>We join your engineers as a dedicated squad, owning delivery and architecture with you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Services
+         ========================= -->
+    <section id="services" class="ilex-section ilex-container">
+      <header class="ilex-section-header" data-animate="fade-up">
+        <h2>What we build</h2>
+        <p>
+          From first MVP to multi-region production, we design the architecture, write the code,
+          and build the tooling around your product.
+        </p>
+      </header>
+
+      <div class="ilex-grid-3">
+        <article class="ilex-card ilex-service-card" data-animate="fade-up">
+          <div class="ilex-card-subtitle">Backend &amp; APIs</div>
+          <h3 class="ilex-card-title">Scalable service layers</h3>
+          <p>
+            API design, microservices, event-driven architectures, and resilient background jobs
+            built with battle-tested stacks.
+          </p>
+          <ul class="ilex-list">
+            <li>REST &amp; GraphQL API design</li>
+            <li>Distributed task queues</li>
+            <li>Authentication, authorization, auditing</li>
+          </ul>
+        </article>
+
+        <article class="ilex-card ilex-service-card" data-animate="fade-up" data-animate-delay="80">
+          <div class="ilex-card-subtitle">Web Applications</div>
+          <h3 class="ilex-card-title">Modern product interfaces</h3>
+          <p>
+            Performance-focused frontends with clear UX for dashboards, admin tools, and customer-facing apps.
+          </p>
+          <ul class="ilex-list">
+            <li>Design systems &amp; UI kits</li>
+            <li>SPA/MPA frontends</li>
+            <li>Accessibility &amp; performance budgets</li>
+          </ul>
+        </article>
+
+        <article class="ilex-card ilex-service-card" data-animate="fade-up" data-animate-delay="160">
+          <div class="ilex-card-subtitle">Developer Experience</div>
+          <h3 class="ilex-card-title">Tooling &amp; automation</h3>
+          <p>
+            CI/CD pipelines, internal CLIs, and monitoring that keep your teams shipping safely and frequently.
+          </p>
+          <ul class="ilex-list">
+            <li>CI/CD pipelines &amp; release flows</li>
+            <li>Infrastructure as code</li>
+            <li>Monitoring, logging &amp; alerting</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================
+         Tech Stack
+         ========================= -->
+    <section id="stack" class="ilex-section ilex-section-alt">
+      <div class="ilex-container">
+        <header class="ilex-section-header" data-animate="fade-up">
+          <h2>Preferred stack</h2>
+          <p>We pick boring, proven technology for critical paths and modern tools where it matters.</p>
+        </header>
+
+        <div class="ilex-stack-grid">
+          <div class="ilex-card" data-animate="fade-up">
+            <div class="ilex-card-subtitle">Core</div>
+            <h3 class="ilex-card-title">Application layer</h3>
+            <div class="ilex-chip-row">
+              <span class="ilex-chip">Python · Django</span>
+              <span class="ilex-chip">FastAPI</span>
+              <span class="ilex-chip">Node.js</span>
+              <span class="ilex-chip">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="ilex-card" data-animate="fade-up" data-animate-delay="80">
+            <div class="ilex-card-subtitle">Data</div>
+            <h3 class="ilex-card-title">Storage &amp; messaging</h3>
+            <div class="ilex-chip-row">
+              <span class="ilex-chip">PostgreSQL</span>
+              <span class="ilex-chip">Redis</span>
+              <span class="ilex-chip">Kafka</span>
+              <span class="ilex-chip">Elastic</span>
+            </div>
+          </div>
+
+          <div class="ilex-card" data-animate="fade-up" data-animate-delay="160">
+            <div class="ilex-card-subtitle">Platform</div>
+            <h3 class="ilex-card-title">Cloud &amp; operations</h3>
+            <div class="ilex-chip-row">
+              <span class="ilex-chip">Docker</span>
+              <span class="ilex-chip">Kubernetes</span>
+              <span class="ilex-chip">AWS · GCP</span>
+              <span class="ilex-chip">Terraform</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Case Studies
+         ========================= -->
+    <section id="cases" class="ilex-section ilex-container">
+      <header class="ilex-section-header" data-animate="fade-up">
+        <h2>Selected work</h2>
+        <p>Quietly powering products used by thousands of users every day.</p>
+      </header>
+
+      <div class="ilex-grid-2">
+        <article class="ilex-card ilex-case-card" data-animate="slide-up">
+          <div class="ilex-card-subtitle">FINTECH PLATFORM</div>
+          <h3 class="ilex-card-title">Real-time risk engine</h3>
+          <p>
+            We designed and implemented a low-latency risk evaluation engine processing
+            thousands of events per second with strict audit requirements.
+          </p>
+          <ul class="ilex-list">
+            <li>Event-driven architecture with Kafka</li>
+            <li>Multi-region deployment with blue/green releases</li>
+            <li>99.98% uptime over 18 months</li>
+          </ul>
+        </article>
+
+        <article class="ilex-card ilex-case-card" data-animate="slide-up" data-animate-delay="120">
+          <div class="ilex-card-subtitle">SAAS ANALYTICS</div>
+          <h3 class="ilex-card-title">Customer insights dashboard</h3>
+          <p>
+            Full-stack delivery of a self-serve analytics product, from data ingestion to
+            UI and role-based access controls.
+          </p>
+          <ul class="ilex-list">
+            <li>PostgreSQL + columnar warehouse</li>
+            <li>API gateway and internal SDK</li>
+            <li>Design system powering multiple apps</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================
+         Process
+         ========================= -->
+    <section class="ilex-section ilex-section-alt">
+      <div class="ilex-container">
+        <header class="ilex-section-header" data-animate="fade-up">
+          <h2>How we work</h2>
+          <p>Opinionated, transparent, and deeply collaborative.</p>
+        </header>
+
+        <ol class="ilex-process" data-animate="fade-up">
+          <li>
+            <span class="step-index">01</span>
+            <div class="step-body">
+              <h3>Technical discovery</h3>
+              <p>
+                We map your current architecture, constraints, and roadmap to understand
+                where we can unlock the most leverage.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">02</span>
+            <div class="step-body">
+              <h3>Architecture &amp; delivery plan</h3>
+              <p>
+                We propose a concrete system design, milestones, and integration plan that
+                your internal teams can sign off on.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">03</span>
+            <div class="step-body">
+              <h3>Embedded execution</h3>
+              <p>
+                Our engineers join your standups, own delivery, and keep everything observable,
+                documented, and testable.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="step-index">04</span>
+            <div class="step-body">
+              <h3>Handover &amp; iteration</h3>
+              <p>
+                We document the system, hand over ownership, and stay close for improvements
+                and future iterations.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =========================
+         About & Testimonials
+         ========================= -->
+    <section id="about" class="ilex-section ilex-container">
+      <div class="ilex-about-grid">
+        <div data-animate="fade-up">
+          <header class="ilex-section-header">
+            <h2>About ilex</h2>
+            <p>
+              ilex is a small, senior-heavy studio working with product and platform teams
+              who care about technical quality and long-term maintainability.
+            </p>
+          </header>
+          <div class="ilex-card ilex-about-card">
+            <ul class="ilex-kpi-list">
+              <li>
+                <span class="kpi-value">10+</span>
+                <span class="kpi-label">Years of backend experience</span>
+              </li>
+              <li>
+                <span class="kpi-value">50+</span>
+                <span class="kpi-label">Projects shipped</span>
+              </li>
+              <li>
+                <span class="kpi-value">4</span>
+                <span class="kpi-label">Time zones covered</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ilex-card ilex-testimonials" data-animate="slide-left">
+          <div class="ilex-card-subtitle">Client feedback</div>
+          <h3 class="ilex-card-title">“The kind of team you can trust with core systems.”</h3>
+          <p>
+            “ilex joined our platform group and quickly became the go-to team for anything
+            critical. Architecture decisions were well reasoned, and the execution was
+            predictable.”</p>
+          <p class="ilex-testimonial-meta">
+            VP of Engineering, B2B SaaS company
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Contact
+         ========================= -->
+    <section id="contact" class="ilex-section ilex-section-alt">
+      <div class="ilex-container ilex-contact-grid">
+        <div data-animate="fade-up">
+          <header class="ilex-section-header">
+            <h2>Let’s talk about your system</h2>
+            <p>
+              Share a bit about your product, current stack, and what you’re trying to achieve.
+              We’ll get back with a technical perspective, not a sales pitch.
+            </p>
+          </header>
+          <div class="ilex-contact-meta">
+            <div>
+              <span class="label">Response time</span>
+              <span class="value">Usually within 1–2 business days</span>
+            </div>
+            <div>
+              <span class="label">Email</span>
+              <span class="value">hello@ilex.dev</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="ilex-card ilex-contact-form" data-animate="fade-up" novalidate>
+          <div class="ilex-card-subtitle">Project intake</div>
+          <div class="ilex-form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" class="ilex-input" placeholder="Your name" />
+          </div>
+          <div class="ilex-form-row">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" class="ilex-input" placeholder="you@company.com" />
+          </div>
+          <div class="ilex-form-row">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" class="ilex-input" placeholder="Company name" />
+          </div>
+          <div class="ilex-form-row">
+            <label for="context">What are you building?</label>
+            <textarea id="context" name="context" rows="4" class="ilex-input ilex-textarea"
+              placeholder="Brief context, current stack, and what you’d like help with."></textarea>
+          </div>
+          <div class="ilex-form-footer">
+            <button type="submit" class="ilex-btn ilex-btn-primary">
+              Submit
+            </button>
+            <p class="ilex-form-hint">We’ll follow up by email with next steps.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer
+       ========================= -->
+  <footer class="ilex-footer">
+    <div class="ilex-container ilex-footer-inner">
+      <div class="ilex-footer-brand">
+        <div class="ilex-logo-row">
+          <div class="ilex-logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="9" r="5" class="ilex-logo-mark-accent" />
+              <path d="M6 26 L18 14 L24 14 L12 26 Z" class="ilex-logo-mark-primary" />
+              <path d="M18 26 L24 20 L30 20 L24 26 Z" class="ilex-logo-mark-primary" />
+            </svg>
+          </div>
+          <span class="ilex-logo-text">ilex</span>
+        </div>
+        <p>Software engineering studio for modern web products.</p>
+      </div>
+
+      <div class="ilex-footer-links">
+        <div>
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#cases">Case studies</a>
+        </div>
+        <div>
+          <h4>Capabilities</h4>
+          <a href="#services">Services</a>
+          <a href="#stack">Tech stack</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="mailto:hello@ilex.dev">hello@ilex.dev</a>
+          <a href="https://instagram.com/ilex_development" target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+
+      <div class="ilex-footer-meta">
+        <span>© <span id="year"></span> ilex studio. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
