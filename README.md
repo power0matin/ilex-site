@@ -1,4 +1,4 @@
-# ilex-site
+<h1 align="center">ilex-site</h1>
 
 <!-- repo-badges:start -->
 <p align="center">
@@ -314,3 +314,33 @@ This project is licensed under the **MIT License**.
 See [`LICENSE`](./LICENSE) for details.
 
 Although the code is MIT-licensed, this repository remains **private** and intended for internal use within the ilex engineering team.
+
+## Contact
+
+**Matin Shahabadi**
+
+- Website: [matinshahabadi.ir](https://matinshahabadi.ir)
+- Email: [me@matinshahabadi.ir](mailto:me@matinshahabadi.ir)
+- GitHub: [power0matin](https://github.com/power0matin)
+- LinkedIn: [matin-shahabadi](https://www.linkedin.com/in/matin-shahabadi)
+
+<p align="center">
+  <b>If this helped you, consider giving it a star!</b><br>
+  <sub>Your support keeps the project alive and helps others find it.</sub>
+</p>
+
+<!-- Copy-paste in your Readme.md file -->
+<p align="center">
+  <a href="https://next.ossinsight.io/widgets/official/analyze-repo-stars-history?repo_id=1100834947" target="_blank" style="display: block" align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://next.ossinsight.io/widgets/official/analyze-repo-stars-history/thumbnail.png?repo_id=1100834947&amp;image_size=auto&amp;color_scheme=dark" width="721" height="auto">
+      <img alt="Star History of power0matin/ilex-site" src="https://next.ossinsight.io/widgets/official/analyze-repo-stars-history/thumbnail.png?repo_id=1100834947&amp;image_size=auto&amp;color_scheme=light" width="721" height="auto">
+    </picture>
+  </a>
+</p>
+
+<!-- Made with [OSS Insight](https://ossinsight.io/) -->
+
+<p align="center">
+  Created by <a href="https://github.com/power0matin">power0matin</a>
+</p>
